@@ -19,7 +19,7 @@ import com.foodbox.app.models.Users;
 import com.foodbox.app.service.userService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class userController {
 	@Autowired
 	userService usrService;
