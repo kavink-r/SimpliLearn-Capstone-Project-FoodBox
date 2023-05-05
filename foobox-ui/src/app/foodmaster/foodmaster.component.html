@@ -1,0 +1,32 @@
+<button class="btn btn-primary" routerLink="addfood">Add Food</button>
+<router-outlet></router-outlet>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Food ID</th>
+            <th>Food Name</th>
+            <th>Food Description</th>
+            <th>Rate</th>
+            <th>Rating</th>
+            <th>Cooking Time</th>
+            <th>Tags</th>
+            <th>Cuisine</th>
+            <th>Image</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of fooditems">
+            <td>{{item.foodId}}</td>
+            <td>{{item.foodName}}</td>
+            <td>{{item.foodDesc}}</td>
+            <td>{{item.rate | currency: "INR"}}</td>
+            <td>{{item.rating}}</td>
+            <td>{{item.cookingTime}} mins</td>
+            <td><li *ngFor="let tag of item.tag">{{tag}}</li></td>
+            <td>{{item.cuisine}}</td>
+            <td><img class="card-img-top" style="height:5rem;object-fit: cover;" src="assets/pictures/food{{item.imgUrl}}">{{item.imgUrl}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

@@ -7,6 +7,6 @@ export class foodItem {
     cookingTime:number;
     tags:string[];
     cuisine:string;
-    imageURL:string
+    imgUrl:string;
 
 }

@@ -1,0 +1,27 @@
+<div class="input-group ps-5 justify-content-center" style="padding:1rem;">
+    <div id="navbar-search-autocomplete" class="form-outline">
+      <input type="search" placeholder="Search a food" id="form1" class="form-control" /> 
+    </div>
+    <button type="button" class="btn btn-primary">
+        <i class="bi bi-search"></i>
+    </button>
+  </div>
+
+<div class="card-deck">
+    <div class="row">
+    <div class="card" style="width:18rem; margin: 0 0.2rem;" *ngFor="let item of foodItems">
+    
+      <img class="card-img-top" style="height:10rem;object-fit: cover;" src="assets/pictures/food{{item.imgUrl}}" alt="food image">
+      <div class="card-body">
+        <h5 class="card-title">{{item.foodName}}</h5>
+        <p class="card-text" style="display: inline;"><small class="text-muted">{{item.cuisine}}</small></p><span style="float:right;text-align: end;"><b>{{item.rate | currency: "INR"}}</b></span>
+        <ul style="list-style-type: none;">
+            <li style="float: left;" *ngFor="let tag of item.tag"><small style="background-color: lightgray;">{{tag}}</small> <small>|</small></li>
+        </ul>
+        <div class="clearfix"></div>
+        <p class="card-text">{{item.foodDesc}}</p>
+        <p class="card-text"><small class="text-muted">Rating: {{item.rating}} | <i class="bi bi-hourglass-split"></i> {{item.cookingTime}} mins</small></p>
+      </div>
+    </div>
+</div>
+  </div>

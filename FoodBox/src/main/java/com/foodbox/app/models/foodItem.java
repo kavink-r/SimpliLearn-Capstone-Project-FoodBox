@@ -17,12 +17,21 @@ public class foodItem {
 	private String foodName;
 	private String foodDesc;
 	private int rate;
-	private int rating;
+	private int rating;	
 	private int cookingTime;
 	private List<String> tag;
 	private String cuisine;
 	private String imgUrl;
+	private boolean status;
 	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	public foodItem() {
 		// TODO Auto-generated constructor stub
 	}

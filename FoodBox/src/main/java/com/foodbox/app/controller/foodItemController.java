@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -20,6 +21,7 @@ import com.foodbox.app.models.Users;
 import com.foodbox.app.models.foodItem;
 import com.foodbox.app.service.foodItemService;
 
+@CrossOrigin(allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/food")
 public class foodItemController {
@@ -80,4 +82,10 @@ public class foodItemController {
 		status.put("status", fs.updateFoodDetails(item));
 	return status;
 }
+	
+	@PatchMapping("changestatus")
+	public void changestatus(@RequestBody foodItem item) {
+		
+	}
+	
 }
