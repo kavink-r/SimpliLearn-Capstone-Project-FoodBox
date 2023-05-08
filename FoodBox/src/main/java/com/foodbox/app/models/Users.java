@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Uid;
+	private int userId;
 	private String firstName;
 	private String middleName;
 	private String lastName;
@@ -20,11 +20,11 @@ public class Users {
 	public Users() {
 		// TODO Auto-generated constructor stub
 	}
-	public int getUid() {
-		return Uid;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUid(int uid) {
-		Uid = uid;
+	public void setUserId(int uid) {
+		userId = uid;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -70,7 +70,7 @@ public class Users {
 	}
 	@Override
 	public String toString() {
-		return "Users [Uid=" + Uid + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+		return "Users [userId=" + userId + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
 				+ lastName + ", userName=" + userName + ", email=" + email + ", password=" + password + ", country="
 				+ country + "]";
 	}

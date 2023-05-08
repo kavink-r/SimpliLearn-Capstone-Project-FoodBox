@@ -8,11 +8,15 @@ import { FoodlistComponent } from './foodlist/foodlist.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { FoodmasterComponent } from './foodmaster/foodmaster.component';
-import { FoodsmasterComponent } from './foodsmaster/foodsmaster.component';
 import { UsermasterComponent } from './usermaster/usermaster.component';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { AddfoodComponent } from './addfood/addfood.component'
+import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdduserComponent } from './adduser/adduser.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +26,20 @@ import { AddfoodComponent } from './addfood/addfood.component'
     FoodlistComponent,
     AdminpanelComponent,
     FoodmasterComponent,
-    FoodsmasterComponent,
     UsermasterComponent,
     OrderhistoryComponent,
     ChangepasswordComponent,
-    AddfoodComponent
+    AddfoodComponent,
+    AdduserComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

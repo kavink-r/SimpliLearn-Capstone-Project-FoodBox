@@ -8,7 +8,7 @@ import { status } from 'src/models/status';
   providedIn: 'root'
 })
 export class FoodItemService {
-baseurl:string='http://localhost:8080/api/food/'
+baseurl:string='http://localhost:8080/api/food/';
   constructor(private http:HttpClient) { }
 
   getAllFoods():Observable<foodItem[]>{
@@ -34,5 +34,9 @@ baseurl:string='http://localhost:8080/api/food/'
 
   updateFoodDetails(food:foodItem):Observable<status>{
     return this.http.patch<status>(this.baseurl+'update/'+food.foodId,food);
+  }
+  changestatus(item:foodItem):Observable<status>{
+    
+    return this.http.post<status>(this.baseurl +'statuschange', item);
   }
 }

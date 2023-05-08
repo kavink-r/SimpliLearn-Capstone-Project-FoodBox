@@ -1,1 +1,86 @@
-<p>addfood works!</p>
+<div class="container py-5 h-100">
+    <button class="btn btn-primary" style="float:right;" routerLink="../">X</button>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <span class="text-center">
+            <h3>Add Food</h3>
+        </span>
+        <div class="col-lg-8 col-xl-6">
+
+            <div class="card rounded-3">
+
+                <div class="card-body p-4 p-md-5">
+                    <form>
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="foodname" class="form-control" name="foodname"
+                                    [(ngModel)]="item.foodName" />
+                                <label class="form-label" for="foodname">Food Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="fooddesc" class="form-control" name="fooddesc"
+                                    [(ngModel)]="item.foodDesc" />
+                                <label class="form-label" for="fooddesc">Food Description</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="rate" class="form-control" name="rate" [(ngModel)]="item.rate" />
+                                <label class="form-label" for="rate">Rate</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="number" id="rating" max="5" class="form-control" name="rating"
+                                        [(ngModel)]="item.rating" />
+                                    <label class="form-label" for="rating">Rating</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="number" id="cookingtime" class="form-control" name="cookingtime"
+                                        [(ngModel)]="item.cookingTime" />
+                                    <label class="form-label" for="cookingtime">Cooking Time</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="tag" class="form-control" name="tag" [(ngModel)]="tagtemp" />
+                                    <label class="form-label" for="tag">Tag name</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" (click)="addtag()">Add tag</button>
+                            </div>
+                        </div>
+                        <span>Tags:</span><br>
+                        <li *ngFor="let tag of item.tag">{{tag}}  <button class="btn btn-sm btn-primary" (click)="removetag(tag)">X</button></li>
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="cuisine" class="form-control" name="cuisine" [(ngModel)]="item.cuisine" />
+                                <label class="form-label" for="cuisine">Cuisine</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="imgurl" class="form-control" name="imgurl" [(ngModel)]="item.imgUrl" />
+                                <label class="form-label" for="imgurl">Image Url</label>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-block mb-4" (click)="addfood()">Add Food</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -83,9 +83,13 @@ public class foodItemController {
 	return status;
 }
 	
-	@PatchMapping("changestatus")
-	public void changestatus(@RequestBody foodItem item) {
+	@PostMapping("/statuschange")
+	public Map<String, String> changestatus(@RequestBody foodItem item) {
 		
+		Map<String, String> status = new HashMap<>();
+		status.put("status", "1");
+		fs.changestatus(item);
+		return status;
 	}
 	
 }

@@ -5,8 +5,8 @@ export class foodItem {
     rate:number;
     rating:number;
     cookingTime:number;
-    tags:string[];
+    tag:string[];
     cuisine:string;
     imgUrl:string;
-
+    status:boolean;
 }

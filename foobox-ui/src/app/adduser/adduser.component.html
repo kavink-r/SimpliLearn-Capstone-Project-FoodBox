@@ -1,0 +1,92 @@
+<div class="container py-5 h-100">
+    <button class="btn btn-primary" style="float:right;" routerLink="../">X</button>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <span class="text-center">
+            <h3>Add User</h3>
+        </span>
+        <div class="col-lg-8 col-xl-6">
+
+            <div class="card rounded-3">
+
+                <div class="card-body p-4 p-md-5">
+                    <form #userform="ngForm">
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="firstname" required class="form-control" name="firstname"
+                                    [(ngModel)]="usr.firstName" />
+                                <label class="form-label" for="foodname">First Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="middleName" class="form-control" name="MiddleName"
+                                    [(ngModel)]="usr.middleName" />
+                                <label class="form-label" for="middlename">Middle Name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="lastName" required class="form-control" name="lastName"
+                                    [(ngModel)]="usr.lastName" />
+                                <label class="form-label" for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="username" required class="form-control" name="username"
+                                        [(ngModel)]="usr.userName" />
+                                    <label class="form-label" for="username">Username</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="email" id="email" required class="form-control" name="email"
+                                        [(ngModel)]="usr.email" />
+                                    <label class="form-label" for="email">E-mail</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <select id="form3Example1q3" required class="form-select" name="country"
+                                    [(ngModel)]="usr.country">
+                                    <option *ngFor="let country of country_list" value="{{country}}">{{country}}
+                                    </option>
+                                </select>
+                                
+                            </div>
+                            <label class="form-label" for="form3Example1q">Country</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="password" id="pass" required class="form-control"
+                                        [ngStyle]="{'border-color': usr.password==temppass? '' : '#ff8282'}" name="pass"
+                                        [(ngModel)]="usr.password" />
+                                    <label class="form-label" for="pass">Enter Password</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="password" id="confirmpass" required class="form-control"
+                                        [ngStyle]="{'border-color': usr.password==temppass? '' : '#ff8282'}" name="pass"
+                                        name="confirmpass" [(ngModel)]="temppass" />
+                                    <label class="form-label" for="confirmpass">Confirm Password</label>
+                                </div>
+                            </div>
+                            <br>
+
+                        </div>
+                        <button class="btn btn-primary btn-block mb-4" [disabled]="userform.invalid"
+                            (click)="adduser()">Add User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

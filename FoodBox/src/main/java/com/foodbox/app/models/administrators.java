@@ -19,6 +19,7 @@ public class administrators {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public int getAdminId() {
 		return adminId;
 	}

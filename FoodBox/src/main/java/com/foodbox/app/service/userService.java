@@ -33,15 +33,15 @@ userRepository repository;
 		return repository.findByEmail(email);
 	}
 	
-	public void addUser(Users[] usr) {
-		for(Users u:usr) {
-		repository.save(u);
-		}
+	public void addUser(Users usr) {
+		
+		repository.save(usr);
+		
 	}
 	
 	//update userdetails
 	public void updateUser(Users usr) {
-		Users oldUserdata = repository.getById(usr.getUid());
+		Users oldUserdata = repository.getById(usr.getUserId());
 		if(usr.getFirstName()==null) {
 			usr.setFirstName(oldUserdata.getFirstName());
 		}
@@ -70,7 +70,7 @@ userRepository repository;
 	
 	//delete user by userId
 	public void deleteUser(Users usr) {
-		repository.deleteById(usr.getUid());
+		repository.deleteById(usr.getUserId());
 	}
 	
 }

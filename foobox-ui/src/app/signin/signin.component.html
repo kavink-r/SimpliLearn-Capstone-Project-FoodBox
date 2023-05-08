@@ -1,0 +1,55 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  
+    <div class="container px-4 py-5  text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(0, 84%, 95%)">
+               <br />
+              <span style="color: hsl(0, 81%, 75%)">FoodBox</span>
+            </h1>
+            <p class="mb-4 opacity-70" style="color: hsl(0, 82%, 85%)">
+                FoodBox is a food ordering application that makes it easy and convenient for customers to order their favorite meals from local restaurants. With a user-friendly interface and a wide selection of restaurants to choose from, FoodBox takes the hassle out of mealtime. Customers can browse menus, place orders, and track their delivery in real-time, all from the comfort of their own home. Whether you’re in the mood for pizza, sushi, or something in between, FoodBox has got you covered.
+            </p>
+          </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4  px-md-5">
+                <div class="text-center py-3" style="color: hsl(0, 100%, 46%)"><b><h1>FoodBox</h1></b></div>
+                <mat-slide-toggle class="mb-3" (change)="togglesignin()">Sign in as {{person}}</mat-slide-toggle>
+              <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="usrname" name="usrname"class="form-control" [(ngModel)]="usrname"/>
+                      <label class="form-label" for="usrname">Username or E-mail address</label>
+                    </div>
+                  </div>
+                    
+                <!-- Password input -->
+                <div class="col">
+                  <input type="password" id="password" name="password"class="form-control" [(ngModel)]="password"/>
+                  <label class="form-label" for="password">Password</label>
+                </div>
+  
+                
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" (click)="signin()">
+                  Sign in
+                </button>
+  
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->

@@ -102,7 +102,9 @@ public class foodItemService {
 			}
 			return status;
 	}
-		public void changestatus(boolean status) {
-			
+		public void changestatus(foodItem f) {
+			foodItem food= repo.findById(f.getFoodId()).get();
+			food.setStatus(f.isStatus());
+			repo.save(food);
 		}
 }

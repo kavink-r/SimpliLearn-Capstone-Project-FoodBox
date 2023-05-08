@@ -57,7 +57,7 @@ public class userController {
 			status.put("status", "1");
 			Users updateduser = new Users();
 			updateduser=usrService.findUserById(id);
-			status.put("uid", Integer.toString(updateduser.getUid()));
+			status.put("uid", Integer.toString(updateduser.getUserId()));
 			status.put("firstname", updateduser.getFirstName());
 			status.put("middlename", updateduser.getMiddleName());
 			status.put("lastname", updateduser.getLastName());
@@ -74,7 +74,7 @@ public class userController {
 	}
 	
 	@PostMapping("/adduser")
-	public Map<String, Integer> createUser(@RequestBody Users[] usr){
+	public Map<String, Integer> createUser(@RequestBody Users usr){
 		Map<String, Integer> status = new HashMap<>();
 		try {
 		usrService.addUser(usr);

@@ -18,14 +18,17 @@ public class adminService {
 		repo.save(usr);
 		
 	}
+	
+	public administrators findByUsername(String t) {
+		return repo.findByUsername(t);
+	}
+	
+	public administrators findByEmail(String t) {
+		return repo.findByEmail(t);
+	}
 
-	public void removeAdminUser(administrators usr) {
-		administrators u =null;
-		if(usr.getUserName()!=null) {
-			u = repo.findByUsername(usr.getUserName());
-		}else if(usr.getEmail()!=null) {
-			u = repo.findByEmail(usr.getEmail());
-		}
+	public void removeAdminUser(int id) {
+		administrators u = repo.findById(id).get(); 		
 		if(u!=null) {
 			repo.delete(u);
 		}
@@ -55,8 +58,6 @@ public class adminService {
 		result.put("authentication", "0");
 		administrators u = null;
 		u = repo.findByEmail(usr.getEmail());
-		System.out.println("passed :"+ usr);
-		System.out.println("found :"+ u);
 		if (u == null) {
 			return result;
 		} else if ((u.getEmail()).equals(usr.getEmail())) {

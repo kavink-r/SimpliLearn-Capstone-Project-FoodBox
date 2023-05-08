@@ -26,7 +26,7 @@
             <td><li *ngFor="let tag of item.tag">{{tag}}</li></td>
             <td>{{item.cuisine}}</td>
             <td><img class="card-img-top" style="height:5rem;object-fit: cover;" src="assets/pictures/food{{item.imgUrl}}">{{item.imgUrl}}</td>
-            <td></td>
+            <td><mat-slide-toggle color="accent" [checked]="item.status" (change)="toggleChanged(item.foodId, $event)"></mat-slide-toggle></td>
         </tr>
     </tbody>
 </table>
