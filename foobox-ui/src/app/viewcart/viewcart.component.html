@@ -1,0 +1,60 @@
+<div class="container">
+    <app-navbar></app-navbar>
+
+    <div>
+        <div style="float:left;display:inline;width:60%">
+            <div id="cartitems">
+                <div>
+                    <span style="display:inline; float:left;"><b><i class="bi bi-cart4"></i> Your Cart
+                            Items:</b></span>
+                </div>
+                <div style="display:inline" class="mx-5">
+                    <button class="btn btn-warning btn-sm" (click)="Checkout()">Checkout</button>
+                </div>
+                <div style="display:inline; float:right;" class="mx-5"> 
+                    <i class="bi bi-cart4"></i><b> Your Cart Total:</b>
+                    <p class="text-primary"><b>{{cart.cartprice | currency:"INR"}}</b></p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="card" *ngFor="let item of cart.cartitems">
+                    <div class="card-body">
+                        <div class="row">
+                            <table>
+                                <tr>
+                                    <th style="width:35%;">Title</th>
+                                    <th style="width:15%;">Quantity</th>
+                                    <th style="width:25%;">Price</th>
+                                    <th style="width:25%;" class="text-center">Action</th>
+                                </tr>
+                                <tr>
+                                    <td style="width:35%;"> {{item.food.foodName}}</td>
+                                    <td style="width:15%;">{{item.quantity}}</td>
+                                    <td style="width:25%;"> {{item.cartitemprice | currency:"INR"}}</td>
+                                    <td style="width:25%;" class="text-center">
+                                        <input style="width:45px" type="number" min="1"
+                                            value="{{item.quantity}}" (change)="changequantity(item,$event)">
+                                        <a class="btn btn-danger btn-sm" (click)="removefromcart(item)"><i
+                                                class="bi bi-x"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="checkout" style="float:right;width:30%">
+            <app-checkout *ngIf="checkoutstatus.checkout"></app-checkout>
+            <div class="clearfix"></div>
+        <div class="paygate my-2">
+            <app-paymentgateway *ngIf="checkoutstatus.paymentgateway"></app-paymentgateway>
+        </div>
+        </div>
+        
+        
+    </div>
+</div>

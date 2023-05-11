@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
@@ -9,11 +9,13 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { AddfoodComponent } from './addfood/addfood.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { SigninComponent } from './signin/signin.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+import { AdminAuthGuard } from 'src/gaurds/admin-auth.guard';
 
 const routes: Routes = [ 
   {path:'', component:LandingComponent},
   {path:'logout',redirectTo:'',pathMatch:'full'},
-  {path:'adminpanel', component:AdminpanelComponent, children:[
+  {path:'adminpanel', component:AdminpanelComponent, canActivate:[AdminAuthGuard],children:[
     {path:'foodmaster', component:FoodmasterComponent, children:[
       {path:'addfood',component:AddfoodComponent}
     ]},
@@ -23,7 +25,8 @@ const routes: Routes = [
     {path:'orderhistory', component:OrderhistoryComponent},
     {path:'changepassword', component:ChangepasswordComponent}
   ]},
-  {path:"signin",component:SigninComponent}
+  {path:"signin",component:SigninComponent},
+  {path:"viewcart",component:ViewcartComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,26 @@
+<div class="text-center">
+    <a><b>Confirm Your Purchase:</b></a>
+</div>
+<div class="card">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td>Food Name</td>
+                <td>Quantity</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart.cartitems">
+                <td>{{item.food.foodName}}</td>
+                <td>{{item.quantity}} Nos.</td>
+                <td>{{item.cartitemprice | currency:"INR"}}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Total Price:</b></td>
+                <td><b>{{cart.cartprice | currency:"INR"}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success btn-sm" (click)="paymentgateway()">Proceed to payment</button>
+</div>

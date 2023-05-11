@@ -1,14 +1,17 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand" routerLink="">FoodBox</a>
-    <span *ngIf="currentUser !== 'admin'"><i class="bi bi-cart4"></i>
-    {{cartitems}} Items </span>
+    <div>
+        <span *ngIf="currentUser !== 'admin'"><i class="bi bi-cart4"></i>
+            {{cart.cartitems.length}} Items </span>
+            <button class="btn btn-primary btn-sm" *ngIf="currentUser !== 'admin' && cart.cartitems.length>0" routerLink="viewcart">View Cart</button>
+    </div>
     <form class="form-inline">
-        <span *ngIf="currentUser == 'admin'" routerLink="adminpanel"><i class="bi bi-menu-button-wide-fill"></i>Go to Admin Panel</span>
+        <span *ngIf="currentUser == 'admin'" ><button routerLink="adminpanel"><i class="bi bi-menu-button-wide-fill"></i>Go to Admin Panel</button></span>
         <span class="navbar-text">
            Welcome {{currentUser}}!!
           </span>
           
-<button class="btn btn-warning my-2 my-sm-0" *ngIf="!login" routerLink="signin">Login</button>
+<button class="btn btn-warning my-2 my-sm-0" *ngIf="!login" routerLink="../signin">Login</button>
     <button class="btn btn-warning my-2 my-sm-0" *ngIf="login" (click)="logout()">Sign out</button>
     </form>
 </nav>

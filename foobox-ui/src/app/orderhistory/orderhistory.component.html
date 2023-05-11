@@ -1,1 +1,20 @@
-<p>orderhistory works!</p>
+<table class="table table-outlined table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Order Details</th>
+            <th>Total Order Amount</th>
+            <th>User ID</th>
+            <th>Order Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of bookings">
+            <td>{{order.bookingId}}</td>
+            <td>{{order.bookingDetails}}</td>
+            <td>{{order.bookingAmount | currency:"INR"}}</td>
+            <td>{{order.userId}}</td>
+            <td>{{order.bookingStamp }}</td>
+        </tr>
+    </tbody>
+</table>

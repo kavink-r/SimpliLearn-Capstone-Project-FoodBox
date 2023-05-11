@@ -1,0 +1,13 @@
+<a>You are about to make a payment of {{cart.cartprice | currency:"INR"}} for your total purchase!</a>
+<form #userform="ngForm">
+    <div class="form-group">
+        Enter Your card number
+        <input type="text" class="form-control" id="cardnumber"  name="cardnumber" required>
+        Enter your card CVV number
+        <input type="text" class="form-control" id="cvv"  name="cvv" required>
+        Select Date of Expiry of the card
+        <input type="date" class="form-control" id="doe" name="doe" required>
+        
+    </div>
+    <button class="btn btn-success" [disabled]="userform.invalid"(click)="pay()">Pay</button>
+</form>

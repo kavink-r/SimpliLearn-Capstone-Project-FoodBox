@@ -1,11 +1,12 @@
 <div class="input-group ps-5 justify-content-center" style="padding:1rem;">
     <div id="navbar-search-autocomplete" class="form-outline">
-      <input type="search" placeholder="Search a food" id="form1" class="form-control" /> 
+      <input type="search" placeholder="Search a food" id="form1" class="form-control" [(ngModel)]="searchterm"/> 
     </div>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" (click)="searchfood()">
         <i class="bi bi-search"></i>
     </button>
   </div>
+  <h3 *ngIf="foodItems.length==0" class="text-center">No Results Found !</h3>
 
 <div class="card-deck">
     <div class="row">
@@ -21,7 +22,9 @@
         <div class="clearfix"></div>
         <p class="card-text">{{item.foodDesc}}</p>
         <p class="card-text"><small class="text-muted">Rating: {{item.rating}} | <i class="bi bi-hourglass-split"></i> {{item.cookingTime}} mins</small></p>
+      
       </div>
+     <div class="mb-2 "> <button class="btn btn-primary btn-sm" (click)="addtocart(item)" style="display:inline-block;">Add to Cart</button></div>
     </div>
 </div>
   </div>

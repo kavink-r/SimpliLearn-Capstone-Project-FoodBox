@@ -17,6 +17,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdduserComponent } from './adduser/adduser.component';
 import { SigninComponent } from './signin/signin.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { SigninComponent } from './signin/signin.component';
     ChangepasswordComponent,
     AddfoodComponent,
     AdduserComponent,
-    SigninComponent
+    SigninComponent,
+    ViewcartComponent,
+    CheckoutComponent,
+    PaymentgatewayComponent
   ],
   imports: [
     BrowserModule,
